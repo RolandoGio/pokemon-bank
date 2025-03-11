@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokémon Bank - Dashboard</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+</head>
+<body>
+    <nav class="navbar navbar-dark" style="background-color: #003366;"> 
+        <div class="container d-flex justify-content-between">
+            <img src="img/logo.png" alt="Logo Pokémon Bank" height="50"> 
+            <span class="navbar-brand mb-0 h1 text-white">Pokémon Bank</span>
+            <button class="btn btn-danger" onclick="cerrarSesion()">Cerrar Sesión</button>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <h2 class="text-center">Bienvenido, <span id="nombreUsuario"></span></h2>
+        <p class="text-center">Número de Cuenta: <span id="cuentaUsuario"></span></p>
+        
+        <div class="row mt-4">
+            <div class="col-md-6">
+                <button class="btn btn-success btn-block" onclick="consultarSaldo()">Consultar Saldo</button>
+                <button class="btn btn-primary btn-block" onclick="depositar()">Depositar</button>
+                <button class="btn btn-warning btn-block" onclick="retirar()">Retirar</button>
+            </div>
+            <div class="col-md-6">
+                <button class="btn btn-info btn-block" onclick="pagarServicios()">Pagar Servicios</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="js/dashboard.js"></script>
+</body>
+</html>
