@@ -1,17 +1,17 @@
-$(document).ready(function(){
-    // Mensaje cuando se haga clic en una categoría
-    $(".list-group-item").click(function(){
-        alert("Feature coming soon!");
-    });
+document.addEventListener("DOMContentLoaded", function () {
+    const loginForm = document.getElementById("loginForm");
 
-    // Simulación de búsqueda
-    $(".btn-dark").click(function(){
-        let searchQuery = $(".search-bar").val();
-        if (searchQuery === "") {
-            alert("Por favor, ingrese un término de búsqueda.");
+    loginForm.addEventListener("submit", function (event) {
+        event.preventDefault();
+
+        let pin = document.getElementById("pin").value;
+
+        // Validar que el PIN tenga exactamente 4 dígitos y solo números
+        if (/^\d{4}$/.test(pin)) {
+            alert("Acceso permitido. Redirigiendo...");
+            window.location.href = "dashboard.html"; // Redirige al panel principal
         } else {
-            alert("Buscando: " + searchQuery);
-            // Aquí podrías hacer una petición AJAX o redirigir a otra página
+            alert("Error: El PIN debe contener exactamente 4 números.");
         }
     });
 });

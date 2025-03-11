@@ -1,70 +1,37 @@
-/* Top Bar */
-.top-bar {
-    background: #1d4e9c;
-    padding: 10px 0;
-    font-size: 14px;
-    font-weight: bold;
+/* Estilos generales */
+body {
+    background: url("../img/azul fondo.jpeg") no-repeat center center fixed;
+    background-size: cover;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-/* Navbar */
-.navbar {
-    background: #ff8c00 !important;
+/* Estilo de la tarjeta de login */
+.card {
+    background: white;
+    border-radius: 12px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
-.navbar-brand {
-    font-size: 24px;
-    font-weight: bold;
-}
-
-/* Search Section */
-.search-section {
-    background: #f4f4f4;
-    padding: 20px 0;
-}
-
-.search-bar {
-    width: 60%;
-    margin: 0 auto;
-}
-
-/* Sidebar */
-.categories {
-    background: #1d4e9c;
-    color: white;
-    padding: 15px;
+/* Input de PIN */
+#pin {
+    font-size: 20px;
+    text-align: center;
+    border: 2px solid #0070ff;
     border-radius: 5px;
 }
 
-.categories h5 {
-    margin-bottom: 15px;
-}
-
-.list-group-item {
+/* Botón de ingresar */
+.btn-primary {
+    background-color: #0070ff;
     border: none;
-    cursor: pointer;
+    font-size: 18px;
 }
 
-.list-group-item:hover {
-    background: #f4f4f4;
-}
-
-/* Main Content */
-.product-header h2 {
-    font-size: 28px;
-    font-weight: bold;
-    color: #1d4e9c;
-}
-
-.product-header .price {
-    font-size: 24px;
-    color: #ff8c00;
-    font-weight: bold;
-}
-
-/* Footer */
-.footer {
-    position: relative;
-    bottom: 0;
-    width: 100%;
-    background: #1d4e9c;
+.btn-primary:hover {
+    background-color: #0057cc;
 }
