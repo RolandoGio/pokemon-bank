@@ -4,15 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pokémon Bank - Dashboard</title>
+    <link rel="icon" type="image/x-icon" href="img/blue_pokeball_by_jormxdos_dfgb833-fullview.png">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/dashboard.css">
 </head>
 <body>
-    <nav class="navbar navbar-dark" style="background-color: #003366;"> 
+    <nav class="navbar navbar-dark" style="background-color: #003366;"> <!-- Azul más oscuro -->
         <div class="container d-flex justify-content-between">
-            <img src="img/logo.png" alt="Logo Pokémon Bank" height="50"> 
+            <a href="dashboard.html">
+                <img src="img/logo.png" alt="Logo Pokémon Bank" height="50"> <!-- Espacio para el logo -->
+            </a>
             <span class="navbar-brand mb-0 h1 text-white">Pokémon Bank</span>
-            <button class="btn btn-danger" onclick="cerrarSesion()">Cerrar Sesión</button>
+            <button class="btn btn-danger" onclick="mostrarModalCerrarSesion()">Cerrar Sesión</button>
         </div>
     </nav>
 
@@ -28,6 +31,109 @@
             </div>
             <div class="col-md-6">
                 <button class="btn btn-info btn-block" onclick="pagarServicios()">Pagar Servicios</button>
+            </div>
+        </div>
+    </div>
+
+    <footer class="text-white pt-5 pb-4">
+        
+        <div class="footer-top-bar"></div>
+    
+        <div class="container">
+            <div class="row">
+                <!-- Sponsors Section -->
+                <div class="col-md-12 text-center mb-3">
+                    <h6 class="text-uppercase">Pokémon Bank  Patrocinadores</h6>
+                    <img src="img/Nintendo-Logo-1977.png" alt="Pokémon Logo" class="me-3" style="max-width: 150px;">
+                </div>
+    
+                <!-- Social Media Section -->
+                <div class="col-md-12 text-center mb-4">
+                    <h6 class="text-uppercase">Síguenos en nuestras redes</h6>
+
+
+                    <a href="https://www.facebook.com/PokemonOficialLatAm" target="_blank" rel="noopener noreferrer" class="text-white me-3">
+                        <svg width="80" height="80" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="128" cy="128" r="120" fill="white" stroke="#2D2D2D" stroke-width="10"/>
+                            <path d="M 128,8 A 120,120 0 0 1 248,128 H 8 A 120,120 0 0 1 128,8 Z" fill="#1877F2" stroke="#2D2D2D" stroke-width="10"/>
+                            <circle cx="128" cy="128" r="40" fill="white" stroke="#2D2D2D" stroke-width="10"/>
+                            <text x="110" y="145" font-family="Arial" font-size="48" font-weight="bold" fill="#1877F2">f</text>
+                        </svg>
+                    </a>
+                    
+                    
+
+
+                    <a href="https://x.com/Pokemon" target="_blank" rel="noopener noreferrer" class="text-white me-3">
+                        <svg width="80" height="80" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="128" cy="128" r="120" fill="white" stroke="#2D2D2D" stroke-width="10"/>
+                            <path d="M 128,8 A 120,120 0 0 1 248,128 H 8 A 120,120 0 0 1 128,8 Z" fill="black" stroke="#2D2D2D" stroke-width="10"/>
+                            <circle cx="128" cy="128" r="40" fill="white" stroke="#2D2D2D" stroke-width="10"/>
+                            <text x="110" y="145" font-family="Arial" font-size="48" font-weight="bold" fill="black">X</text>
+                        </svg>
+                    </a>
+                    
+
+                    <a href="https://www.instagram.com/pokemon/" target="_blank" rel="noopener noreferrer" class="text-white me-3">
+                        <svg width="80" height="80" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="128" cy="128" r="120" fill="white" stroke="#2D2D2D" stroke-width="10"/>
+                            <path d="M 128,8 A 120,120 0 0 1 248,128 H 8 A 120,120 0 0 1 128,8 Z" fill="#C13584" stroke="#2D2D2D" stroke-width="10"/>
+                            <circle cx="128" cy="128" r="40" fill="white" stroke="#2D2D2D" stroke-width="10"/>
+                            <text x="105" y="145" font-family="Arial" font-size="48" font-weight="bold" fill="#C13584">IG</text>
+                        </svg>
+                    </a>
+                                    
+                
+                
+                
+                </div>
+
+    
+                <!-- About & Services -->
+                <div class="col-md-4">
+                    <h6 class="text-uppercase">ABOUT POKÉMON BANK</h6>
+                    <p>Un lugar donde los recuerdos de la infancia se encuentran con el presente. Continúa tu camino Pokémon y alcanza nuevas metas.</p>
+                    <p>Los golpes de la vida no nos han detenido, hemos llegado lejos en nuestro camino Pokémon.</p>
+                </div>
+                <div class="col-md-4">
+                    <h6 class="text-uppercase">ENTRENADORES DE AYER Y HOY</h6>
+                    <p>“De niños soñamos con ser Maestros Pokémon, hoy seguimos entrenando en la vida. Que la nostalgia sea tu fuerza.”</p>
+                </div>
+                <div class="col-md-4">
+                    <h6 class="text-uppercase">HORARIOS DE SERVICIO</h6>
+                    <p>Lunes - Jueves: 8am - 9pm</p>
+                    <p>Viernes - Sábado: 8am - 1am</p>
+                    <p>Domingo: 9am - 10pm</p>
+                </div>
+            </div>
+        </div>
+    
+        <!-- Franja inferior dividida y texto centrado -->
+<div class="footer-bottom-wrapper">
+    <div class="footer-bottom-bar">
+        <p class="mb-0">Términos y Condiciones | Política de Privacidad</p>
+    </div>
+</div>
+</footer>
+    
+
+    <!-- Modal de Confirmación de Cierre de Sesión -->
+    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="logoutModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="logoutModalLabel">Confirmar Cierre de Sesión</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    ¿Estás seguro de que quieres seguir tu camino Pokémon y cerrar sesión?
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
+                    <button type="button" class="btn btn-danger" onclick="cerrarSesion()">Sí, Cerrar Sesión</button>
+                </div>
             </div>
         </div>
     </div>

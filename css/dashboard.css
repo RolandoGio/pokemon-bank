@@ -6,12 +6,27 @@ body {
     background-size: cover;
     color: #333;
     font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Capa oscura sobre el fondo */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.2);
+    z-index: -1;
 }
 
 /* Barra de navegación azul con padding */
 .navbar {
     padding: 15px;
-    background: rgb(0, 0, 78); /* Azul oscuro con transparencia */
+    background: rgb(0, 0, 78);
 }
 
 /* Estilo de los botones de acción */
@@ -21,12 +36,17 @@ body {
     border-radius: 8px;
 }
 
-/* Para mejorar la visibilidad del texto */
-.container {
-    background: rgba(255, 255, 255, 0.85); /* Fondo blanco semi-transparente */
+/* Contenedor del contenido principal */
+.dashboard-container {
+    background: rgba(255, 255, 255, 0.85);
     padding: 20px;
     border-radius: 12px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 /* Contenedor dentro del navbar con imagen de fondo */
@@ -36,6 +56,7 @@ body {
     padding: 15px;
     border-radius: 12px;
     position: relative;
+    z-index: 2; /* Asegura que el contenido esté por encima */
 }
 
 /* Oscurecer la imagen de fondo */
@@ -43,17 +64,233 @@ body {
     content: "";
     position: absolute;
     top: 0;
-    left: 0;
+    left: 0;    
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.4); /* Oscurecer un poco la imagen */
+    background: rgba(0, 0, 0, 0.2);
     border-radius: 12px;
-    z-index: 1;
+    z-index: -1; /* Asegura que la capa oscura esté detrás de todo */
 }
 
-/* Asegurar que los elementos del navbar estén encima de la capa oscura */
-.navbar .container * {
+/* Cambiar color y tamaño del texto 'Pokémon Bank' */
+.navbar-brand {
+    color: rgb(255, 255, 255) !important;
+    font-size: 1.8rem !important; /* Aumenta el tamaño del texto */
+    font-weight: bold;
+}
+
+/* Asegurar que el contenido principal ocupe el espacio disponible */
+html, body {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Espacio extra entre el último botón y el footer */
+.main-content {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 150px;
+}
+
+/* Ajuste específico en responsive */
+@media screen and (max-width: 1024px) {
+    .main-content {
+        padding-bottom: 100px;
+    }
+}
+
+/* Footer siempre fijo en la parte inferior */
+footer {
+    background-color: #003366;
+    color: white;
+    padding: 40px 0;
+    font-size: 14px;
+    width: 100%;
+    flex-shrink: 0;
+    margin-top: auto;
     position: relative;
-    z-index: 2;
+}
+
+/* Franja superior dividida en dos colores */
+.footer-top-bar {
+    width: 100%;
+    height: 10px; /* Ajuste del grosor */
+    background: linear-gradient(to right, #ff0000 50%, #004288 50%);
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+
+/* Franja inferior con división y texto centrado */
+.footer-bottom-wrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-bottom-bar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 40px;
+    background: linear-gradient(to right, #ff0000 50%, #004288 50%);
+    color: rgb(207, 174, 24);
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+/* Contenedor del footer */
+.footer-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Contenido del footer */
+.footer-content {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+/* Secciones del footer */
+.footer-section {
+    min-width: 250px;
+    padding: 10px;
+    text-align: center;
+}
+
+/* Títulos en negrita */
+.footer-section h6 {
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+/* Redes sociales */
+.footer-socials {
+    width: 100%;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.footer-socials a {
+    margin: 0 10px;
+    display: inline-block;
+}
+
+.footer-socials img {
+    height: 40px;
+    transition: transform 0.3s;
+}
+
+.footer-socials img:hover {
+    transform: scale(1.1);
+}
+
+/* Pie de página */
+.footer-bottom {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 12px;
+}
+
+/* Texto de términos y condiciones en la franja inferior */
+.footer-terms {
+    padding: 10px 0;
+    background-color: transparent;
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: silver;
+    text-align: center;
+}
+
+/* Media Queries para responsividad */
+@media screen and (max-width: 1024px) {
+
+    .navbar img {
+        height: 30px; /* Reducir tamaño del logo */
+    }
+    .navbar .btn-danger {
+        font-size: 12px;
+        padding: 4px 8px; /* Hacer el botón más compacto */
+    }
+    .navbar-brand {
+        color: rgb(255, 255, 255) !important;
+        font-size: 0.9rem !important; /* Aumenta el tamaño del texto */
+        font-weight: bold;
+    }
+    
+
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    .footer-logo {
+        text-align: center;
+        margin-bottom: 15px;
+    }
+    .footer-text {
+        text-align: center;
+    }
+    .footer-socials {
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+    }
+}
+
+@media screen and (max-width: 2024px) {
+    footer {
+        margin-top: 200px;
+    }
+}
+
+
+/* Media Queries para resoluciones específicas sin afectar Nest Hub y Nest Hub Max */
+@media screen and (max-width: 1279px) and (min-width: 853px),
+       (max-width: 1368px) and (min-width: 912px),
+       (max-width: 1366px) and (min-width: 1023px) {
+    body {
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+    }
+    .main-content {
+        flex: 1;
+    }
+    footer {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+    }
+}
+
+
+@media screen and (max-width: 1280px) and (min-width: 800px),
+       (max-width: 1024px) and (min-width: 600px) {
+    footer {
+        position: relative !important;
+    }
 }
 

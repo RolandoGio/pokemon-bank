@@ -12,17 +12,14 @@ document.addEventListener("DOMContentLoaded", function () {
         let pin = document.getElementById("pin").value;
 
         if (!/^\d{4}$/.test(pin)) {
-            alert("Error: El PIN debe contener exactamente 4 números.");
+            mostrarModalError("¡Código incorrecto! Los entrenadores Pokémon solo usan códigos de 4 dígitos.");
             return;
         }
 
         if (usuarios[pin]) {
             let usuario = usuarios[pin];
-
-            // Guardar datos del usuario en sessionStorage
             sessionStorage.setItem("usuario", JSON.stringify(usuario));
 
-            // Mostrar información en el modal
             document.getElementById("modalBody").innerHTML = `
                 <p><strong>Nombre:</strong> ${usuario.nombre}</p>
                 <p><strong>Cuenta:</strong> ${usuario.cuenta}</p>
@@ -34,9 +31,14 @@ document.addEventListener("DOMContentLoaded", function () {
             document.getElementById("continueBtn").addEventListener("click", function () {
                 window.location.href = "dashboard.html";
             });
-
         } else {
-            alert("Error: PIN incorrecto. Intente de nuevo.");
+            mostrarModalError("¡Entrenador no encontrado! Parece que no tienes una Pokédex registrada en nuestro banco.");
         }
     });
 });
+
+// Función para mostrar el modal de error
+function mostrarModalError(mensaje) {
+    document.getElementById("errorModalBody").innerHTML = `<p>${mensaje}</p>`;
+    $("#errorModal").modal("show");
+}
