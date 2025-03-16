@@ -3,41 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pokémon Bank - Dashboard</title>
+    <title>Pokémon Bank - Gráficos</title>
     <link rel="icon" type="image/x-icon" href="img/blue_pokeball_by_jormxdos_dfgb833-fullview.png">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/dashboard.css">
 </head>
 <body>
-    <nav class="navbar navbar-dark" style="background-color: #003366;"> <!-- Azul más oscuro -->
+    <nav class="navbar navbar-dark" style="background-color: #003366;">
         <div class="container d-flex justify-content-between">
             <a href="dashboard.html">
-                <img src="img/logo.png" alt="Logo Pokémon Bank" height="50"> <!-- Espacio para el logo -->
+                <img src="img/logo.png" alt="Logo Pokémon Bank" height="50">
             </a>
-            <span class="navbar-brand mb-0 h1 text-white">Pokémon Bank</span>
-            <button class="btn btn-danger" onclick="mostrarModalCerrarSesion()">Cerrar Sesión</button>
+            <span class="navbar-brand mb-0 h1 text-white">Pokémon Bank </span>
+            <a href="dashboard.html" class="btn btn-warning">⬅️ Regresar</a>
         </div>
     </nav>
 
     <div class="container mt-5">
-        <h2 class="text-center">Bienvenido, <span id="nombreUsuario"></span></h2>
-        <p class="text-center">Número de Cuenta: <span id="cuentaUsuario"></span></p>
-        
-        <div class="row mt-4">
-            <div class="col-md-6">
-                <button class="btn btn-success btn-block" onclick="consultarSaldo()">Consultar Saldo</button>
-                <button class="btn btn-primary btn-block" onclick="depositar()">Depositar</button>
-                <button class="btn btn-warning btn-block" onclick="retirar()">Retirar</button>
-                
-            </div>
-
-            <div class="col-md-6">
-                <button class="btn btn-info btn-block" onclick="pagarServicios()">Pagar Servicios</button>
-                <button class="btn btn-info btn-block" onclick="verHistorial()">📜 Historial de Transacciones</button>
-                <button class="btn btn-info btn-block" onclick="verGraficos()">Ver Gráficos</button>
-
-            </div>
-        </div>
+        <h2 class="text-center">Resumen de Transacciones</h2>
+        <canvas id="graficoTransacciones"></canvas>
     </div>
 
     <footer class="text-white pt-5 pb-4">
@@ -120,32 +104,8 @@
     </div>
 </div>
 </footer>
-    
 
-    <!-- Modal de Confirmación de Cierre de Sesión -->
-    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="logoutModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="logoutModalLabel">Confirmar Cierre de Sesión</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    ¿Estás seguro de que quieres seguir tu camino Pokémon y cerrar sesión?
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
-                    <button type="button" class="btn btn-danger" onclick="cerrarSesion()">Sí, Cerrar Sesión</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script src="js/dashboard.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="js/graficos.js"></script>
 </body>
 </html>
